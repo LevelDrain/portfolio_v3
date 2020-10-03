@@ -6,11 +6,33 @@
         <!-- 本文枠 -->
         <div class="main-menu-content">
           <div class="main-menu-front pc-hide">
-           テストPC
+
+            <!-- https://www.kabanoki.net/4898/ -->
+            <!-- https://qiita.com/weekendhikach/items/667aa5eee521f6bbd8ef -->
+
+            <carousel :per-page="1" :autoplay="true" :loop="true" :navigation-enabled="true"
+                      navigation-prev-label="〈"
+                      navigation-next-label="〉">
+              <slide>
+                <div class="slider-inner">
+                  Slide1
+                </div>
+              </slide>
+              <slide>
+                <div class="slider-inner">
+                  Slide2
+                </div>
+              </slide>
+              <slide>
+                <div class="slider-inner">
+                  Slide3
+                </div>
+              </slide>
+            </carousel>
           </div>
 
           <div class="main-menu-front sp-hide">
-           テストSP
+            テストSP
           </div>
         </div>
         <!-- //本文枠 -->
@@ -20,28 +42,51 @@
 </template>
 
 <script>
-import Modal from '@/components/Modal.vue'
+import Modal from "@/components/Modal.vue";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     Modal,
   },
   data() {
     return {
-      showSection: this.$store.state.showSection,
-    }
+      showSection: this.$store.state.showSection
+    };
   },
   methods: {
     openLink(id) {
       //遷移（遷移と同時にモーダルを開く仕様 → router参照）
-      this.$router.push('/' + id)
-    },
+      this.$router.push("/" + id);
+    }
   }
-}
+};
 </script>
 
 <style scoped>
+/* カルーセルサンプル */
+.VueCarousel {
+  height: 300px;
+}
+
+.VueCarousel-wrapper, .VueCarousel-inner, .VueCarousel-slide {
+  height: 100% !important;
+}
+
+.VueCarousel-slide .slider-inner {
+  height: 100%;
+  background-color: #62caaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border: 2px solid #fff;
+  font-size: 30px;
+  border-radius: 10px;
+}
+
+/* ---- */
+
 .main-menu {
   display: flex;
   flex-direction: column;
@@ -118,7 +163,7 @@ export default {
   text-align: left;
   width: 90%;
   padding: 1em;
-  background: rgba(13, 40, 46, .5);
+  background: rgba(13, 40, 46, 0.5);
   box-shadow: 0 0 8px 3px #6ec9e8 inset;
 }
 
@@ -138,7 +183,7 @@ export default {
     left: 5%;
     display: block;
     width: 30em;
-    background: rgba(13, 40, 46, .5);
+    background: rgba(13, 40, 46, 0.5);
     box-shadow: 0 0 8px 3px #6ec9e8 inset;
   }
 
