@@ -5,10 +5,8 @@
         <HeaderBar />
       </header>
 
+      <!-- Three.jsコンポーネント設置予定 -->
       <BubbleEffect class="canvas-bg" />
-      <div class="animation-bg-wrap">
-<!--        <img class="animation-bg" src="./assets/img/img_sf_parts2.svg" alt="" v-if="!this.$store.state.showSection">-->
-      </div>
 
       <main id="Main" role="main">
         <router-view />
@@ -67,17 +65,9 @@ export default {
   font-family: 'PT Serif', 'Noto Serif JP', serif;
 }
 
+/* ※Three.jsコンポーネント設置予定 */
 .canvas-bg {
   z-index: -5;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.animation-bg {
-  z-index: -3;
   position: fixed;
   top: 0;
   left: 0;
@@ -130,15 +120,5 @@ export default {
     background-repeat: no-repeat;
     background-color: #333333;
   }
-}
-
-/* ローディングアニメーション（フェード） */
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
-}
-
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
-{
-  opacity: 0;
 }
 </style>

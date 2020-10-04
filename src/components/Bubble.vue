@@ -1,5 +1,5 @@
 <template>
-  <div>背景</div>
+  <div></div>
 </template>
 
 <script>

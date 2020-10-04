@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-dark nav-color">
-    <router-link class="navbar-brand ml-2" to="/">水準思考</router-link>
+    <router-link class="navbar-brand ml-2" to="/">レベルの箱</router-link>
 
     <ul class="navbar-nav d-flex flex-row">
       <!-- <router-link tag="li" class="nav-link nav-item mr-2 font-size" v-show="this.$store.state.inHome" to="/">Home</router-link>-->
