@@ -1,6 +1,6 @@
 <template>
-  <nav class="navbar navbar-dark nav-color">
-    <router-link class="navbar-brand ml-2" to="/">レベルの箱</router-link>
+  <nav class="navbar navbar-light nav-color">
+    <router-link class="navbar-brand  ml-2" to="/">レベルの箱</router-link>
 
     <ul class="navbar-nav d-flex flex-row">
       <!-- <router-link tag="li" class="nav-link nav-item mr-2 font-size" v-show="this.$store.state.inHome" to="/">Home</router-link>-->
@@ -25,7 +25,8 @@ export default {
 
 <style scoped>
 .nav-color {
-  background: rgba(0, 0, 0, .7);
+  background: #ddd;
+  filter: drop-shadow(0 0 3px #000);
 }
 
 .font-size {
@@ -39,16 +40,6 @@ export default {
   height: 2em;
   margin: auto 1em;
   animation: shadow 3s infinite alternate;
-}
-
-@-webkit-keyframes shadow {
-  0% {
-    opacity: .5;
-  }
-  100% {
-    opacity: 1;
-    filter: drop-shadow(0 0 3px #6ec9e8);
-  }
 }
 
 @keyframes shadow {

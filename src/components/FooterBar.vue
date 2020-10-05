@@ -11,18 +11,12 @@ export default {
 </script>
 
 <style scoped>
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
-
 .footer-color {
-  background: rgba(0, 0, 0, .7);
+  background: #ddd;
+  filter: drop-shadow(0 0 3px #000);
 }
 
-.footer-text{
+.footer-text {
   font-size: .8em;
 }
 </style>
