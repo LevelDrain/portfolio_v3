@@ -17,7 +17,8 @@
           </slide>
           <slide>
             <div class="slider-inner">
-              Slide2
+              <div class="slider-txt">frontend</div>
+              <img src="../assets/img/img_work_geostorm.jpg" alt="" class="slider-banner">
             </div>
           </slide>
           <slide>
@@ -27,24 +28,19 @@
           </slide>
         </carousel>
 
-        <div class="main-menu-item sp-hide">
-          <carousel ref="carousel" :per-page="1" :navigation-enabled="true"
-                    :navigation-prev-label="navigationPrev" :navigation-next-label="navigationNext" @pageChange="test">
-            <slide>
-              <div class="slider-inner">
-                <font-awesome-icon class="fa-icon" :icon="['fab','twitter-square']"/>
-              </div>
-            </slide>
-            <slide>
-              <div class="slider-inner">
-                Slide2
-              </div>
-            </slide>
-          </carousel>
-          <div class="about">
-            自己紹介欄
-          </div>
-        </div>
+        <carousel class="main-menu-item sp-hide" ref="carousel" :per-page="1" :navigation-enabled="true"
+                  :navigation-prev-label="navigationPrev" :navigation-next-label="navigationNext" @pageChange="test">
+          <slide>
+            <div class="slider-inner">
+              <font-awesome-icon class="fa-icon" :icon="['fab','twitter-square']"/>
+            </div>
+          </slide>
+          <slide>
+            <div class="slider-inner">
+              <img src="../assets/img/img_work_geostorm.jpg" alt="" class="slider-banner">
+            </div>
+          </slide>
+        </carousel>
 
         <!-- //本文枠 -->
       </div>
@@ -67,12 +63,12 @@ export default {
   },
   computed: {
     navigationNext() {
-      const right = require('../assets/img/caret-right-solid.svg')
-      return '<img src="' + right + '" width="40px">'
+      const right = require('../assets/img/arrow_right.png')
+      return '<img src="' + right + '" width="30em" style="filter: drop-shadow(0 3px 3px #000);">'
     },
     navigationPrev() {
-      const left = require('../assets/img/caret-left-solid.svg')
-      return '<img src="' + left + '" width="40px">'
+      const left = require('../assets/img/arrow_left.png')
+      return '<img src="' + left + '" width="30em" style="filter: drop-shadow(0 3px 3px #000);">'
     },
   },
   methods: {
@@ -90,16 +86,92 @@ export default {
 <style scoped>
 /* カルーセルサンプル */
 
-.VueCarousel {
-  height: 500px;
+/*.VueCarousel {*/
+/*  height: 500px;*/
+/*}*/
+
+.VueCarousel-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ccc;
+  box-sizing: border-box;
+  margin-top: 15%;
+  /* バナーサイズ参照先 */
+  width: 250px;
+  height: 400px;
 }
 
-.slider-inner{
-  height: 400px;
-  background-color: #62caaa;
+.slider-inner {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #6ec9e8;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-txt {
+  z-index: 50;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+  background-color: rgba(244, 64, 38, .7);
+}
+
+.slider-banner {
+  width: 100%;
+  height: 100%;
+}
+
+@media all and (min-width: 768px) {
+  .VueCarousel-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ccc;
+    box-sizing: border-box;
+    /* バナーサイズ参照先 */
+    height: 400px;
+  }
+
+  .slider-inner {
+    position: relative;
+    background-color: #62caaa;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .slider-txt {
+    z-index: 50;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15em;
+    height: 400px;
+    background-color: rgba(244, 64, 38, .7);
+  }
+
+  .slider-banner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 100%;
+    width: 800px;
+    height: 400px;
+  }
 }
 
 .main-menu {
@@ -143,8 +215,8 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: left;
-  width: 90%;
-  height: 900px;
+  width: 250px;
+  height: 600px;
   padding: 1em;
   background: rgba(13, 40, 46, 0.5);
   box-shadow: 0 0 8px 3px #666 inset;
@@ -157,7 +229,7 @@ export default {
 @media all and (min-width: 769px) {
   .main-menu-item {
     display: flex;
-    width: 70em;
+    width: 800px;
     height: 100%;
     background: rgba(13, 40, 46, 0.5);
     box-shadow: 0 0 8px 3px #6ec9e8 inset;
