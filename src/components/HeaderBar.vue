@@ -56,7 +56,7 @@ export default {
   padding: .5rem 1rem;
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
   .navbar {
     padding: .5rem 8rem;
   }

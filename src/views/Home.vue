@@ -37,6 +37,7 @@
           </slide>
           <slide>
             <div class="slider-inner">
+              <div class="slider-txt">frontend</div>
               <img src="../assets/img/img_work_geostorm.jpg" alt="" class="slider-banner">
             </div>
           </slide>
@@ -84,22 +85,91 @@ export default {
 </script>
 
 <style scoped>
-/* カルーセルサンプル */
+.main-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 600px;
+  /*background: #333333;*/
+}
 
+.main-menu-inner {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 12%;
+  width: 278px;
+  height: 600px;
+  /*background: #333333;*/
+}
+
+/* メニューの位置調整 */
+.main-menu-inner {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+@media all and (min-width: 767px) {
+  .main-menu-inner {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 8%;
+    width: 100%;
+    height: 90%;
+    /*background: #333333;*/
+    padding: 5%;
+  }
+}
+
+/* コンテンツ */
+.main-menu-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+  background: rgba(13, 40, 46, 0.5);
+  box-shadow: 0 0 8px 3px #666 inset;
+}
+
+.pc-hide {
+  display: none;
+}
+
+@media all and (min-width: 767px) {
+  .main-menu-item {
+    display: flex;
+    width: 800px;
+    height: 100%;
+    background: rgba(13, 40, 46, 0.5);
+    box-shadow: 0 0 8px 3px #6ec9e8 inset;
+  }
+
+  .sp-hide {
+    display: none;
+  }
+}
+
+/* カルーセル */
 /*.VueCarousel {*/
 /*  height: 500px;*/
 /*}*/
-
 .VueCarousel-slide {
   display: flex;
   align-items: center;
   justify-content: center;
   background: #ccc;
   box-sizing: border-box;
-  margin-top: 15%;
   /* バナーサイズ参照先 */
-  width: 250px;
-  height: 400px;
+  height: 500px;
 }
 
 .slider-inner {
@@ -115,22 +185,25 @@ export default {
 .slider-txt {
   z-index: 50;
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 400px;
+  height: 200px;
   background-color: rgba(244, 64, 38, .7);
 }
 
 .slider-banner {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 278px;
+  height: 500px;
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
   .VueCarousel-slide {
     display: flex;
     align-items: center;
@@ -171,72 +244,6 @@ export default {
     max-width: 100%;
     width: 800px;
     height: 400px;
-  }
-}
-
-.main-menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 1000px;
-  /*background: #333333;*/
-}
-
-.main-menu-inner {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 7%;
-  width: 100%;
-  height: 90%;
-  /*background: #333333;*/
-}
-
-/* メニューの位置調整 */
-.main-menu-inner {
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 10% 5%;
-}
-
-@media all and (min-width: 768px) {
-  .main-menu-inner {
-    padding: 5%;
-  }
-}
-
-/* コンテンツ */
-.main-menu-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  width: 250px;
-  height: 600px;
-  padding: 1em;
-  background: rgba(13, 40, 46, 0.5);
-  box-shadow: 0 0 8px 3px #666 inset;
-}
-
-.pc-hide {
-  display: none;
-}
-
-@media all and (min-width: 769px) {
-  .main-menu-item {
-    display: flex;
-    width: 800px;
-    height: 100%;
-    background: rgba(13, 40, 46, 0.5);
-    box-shadow: 0 0 8px 3px #6ec9e8 inset;
-  }
-
-  .sp-hide {
-    display: none;
   }
 }
 </style>
