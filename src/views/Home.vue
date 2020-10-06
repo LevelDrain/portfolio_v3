@@ -8,40 +8,44 @@
         <!-- https://www.kabanoki.net/4898/ -->
         <!-- https://qiita.com/weekendhikach/items/667aa5eee521f6bbd8ef -->
 
-        <carousel class="main-menu-item pc-hide" ref="carousel" :per-page="1" :navigation-enabled="true"
-                  :navigation-prev-label="navigationPrev" :navigation-next-label="navigationNext" @pageChange="test">
-          <slide>
-            <div class="slider-inner">
-              <font-awesome-icon class="fa-icon" :icon="['fab','twitter-square']"/>
-            </div>
-          </slide>
-          <slide>
-            <div class="slider-inner">
-              <div class="slider-txt">frontend</div>
-              <img src="../assets/img/img_work_geostorm.jpg" alt="" class="slider-banner">
-            </div>
-          </slide>
-          <slide>
-            <div class="slider-inner">
-              Slide3
-            </div>
-          </slide>
-        </carousel>
+        <div class="main-menu-item pc-hide">
+          <carousel ref="carousel" :per-page="1" :navigation-enabled="true"
+                    :navigation-prev-label="navigationPrev" :navigation-next-label="navigationNext" @pageChange="test">
+            <slide>
+              <div class="slider-inner">
+                <font-awesome-icon class="fa-icon" :icon="['fab','twitter-square']"/>
+              </div>
+            </slide>
+            <slide>
+              <div class="slider-inner">
+                <div class="slider-txt">frontend</div>
+                <img src="../assets/img/img_work_geostorm.jpg" alt="" class="slider-banner">
+              </div>
+            </slide>
+            <slide>
+              <div class="slider-inner">
+                Slide3
+              </div>
+            </slide>
+          </carousel>
+        </div>
 
-        <carousel class="main-menu-item sp-hide" ref="carousel" :per-page="1" :navigation-enabled="true"
-                  :navigation-prev-label="navigationPrev" :navigation-next-label="navigationNext" @pageChange="test">
-          <slide>
-            <div class="slider-inner">
-              <font-awesome-icon class="fa-icon" :icon="['fab','twitter-square']"/>
-            </div>
-          </slide>
-          <slide>
-            <div class="slider-inner">
-              <div class="slider-txt">frontend</div>
-              <img src="../assets/img/img_work_geostorm.jpg" alt="" class="slider-banner">
-            </div>
-          </slide>
-        </carousel>
+        <div class="main-menu-item sp-hide">
+          <carousel ref="carousel" :per-page="1" :navigation-enabled="true"
+                    :navigation-prev-label="navigationPrev" :navigation-next-label="navigationNext" @pageChange="test">
+            <slide>
+              <div class="slider-inner">
+                <font-awesome-icon class="fa-icon" :icon="['fab','twitter-square']"/>
+              </div>
+            </slide>
+            <slide>
+              <div class="slider-inner">
+                <div class="slider-txt">frontend</div>
+                <img src="../assets/img/img_work_geostorm.jpg" alt="" class="slider-banner">
+              </div>
+            </slide>
+          </carousel>
+        </div>
 
         <!-- //本文枠 -->
       </div>
@@ -90,20 +94,16 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 600px;
-  /*background: #333333;*/
 }
 
 .main-menu-inner {
   position: fixed;
+  top: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  top: 12%;
-  width: 278px;
-  height: 600px;
-  /*background: #333333;*/
+  width: 100%;
+  height: 100%;
+  background: #333333;
 }
 
 /* メニューの位置調整 */
@@ -121,7 +121,7 @@ export default {
     top: 8%;
     width: 100%;
     height: 90%;
-    /*background: #333333;*/
+    background: #333333;
     padding: 5%;
   }
 }
@@ -133,8 +133,8 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: left;
-  width: 100%;
-  height: 100%;
+  width: 320px;
+  height: 700px;
   padding: 1em;
   background: rgba(13, 40, 46, 0.5);
   box-shadow: 0 0 8px 3px #666 inset;
@@ -168,8 +168,9 @@ export default {
   justify-content: center;
   background: #ccc;
   box-sizing: border-box;
-  /* バナーサイズ参照先 */
-  height: 500px;
+  /* カルーセル全長 */
+  width: 124px;
+  height: 400px;
 }
 
 .slider-inner {
@@ -210,7 +211,8 @@ export default {
     justify-content: center;
     background: #ccc;
     box-sizing: border-box;
-    /* バナーサイズ参照先 */
+    /* カルーセル全長 */
+    width: 230px; /* 想定の2倍以上 */
     height: 400px;
   }
 
@@ -218,7 +220,7 @@ export default {
     position: relative;
     background-color: #62caaa;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
@@ -240,9 +242,9 @@ export default {
   .slider-banner {
     position: absolute;
     top: 0;
+    left: unset;
     right: 0;
-    max-width: 100%;
-    width: 800px;
+    width: auto;
     height: 400px;
   }
 }
