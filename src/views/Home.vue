@@ -169,7 +169,7 @@ export default {
   background: #ccc;
   box-sizing: border-box;
   /* カルーセル全長 */
-  width: 124px;
+  width: 124px; /* 表示は2倍 */
   height: 400px;
 }
 
@@ -192,7 +192,7 @@ export default {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 200px;
+  height: 120px;
   background-color: rgba(244, 64, 38, .7);
 }
 
@@ -200,8 +200,8 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  width: 278px;
-  height: 500px;
+  width: 248px;
+  height: 400px;
 }
 
 @media all and (min-width: 767px) {
@@ -212,7 +212,7 @@ export default {
     background: #ccc;
     box-sizing: border-box;
     /* カルーセル全長 */
-    width: 230px; /* 想定の2倍以上 */
+    width: 230px; /* 表示は3倍 */
     height: 400px;
   }
 
@@ -244,7 +244,7 @@ export default {
     top: 0;
     left: unset;
     right: 0;
-    width: auto;
+    width: 690px;
     height: 400px;
   }
 }
