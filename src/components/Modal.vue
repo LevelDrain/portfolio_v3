@@ -1,13 +1,11 @@
 <template>
   <transition name="section" v-cloak>
     <div class="section-overlay">
-      <img class="section-parts-l" src="../assets/img/img_sf_parts1.svg" alt="">
       <div class="section">
         <router-view/><!-- ここのpathを動的に変える -->
         <!-- current^=1 排他的論理和（違う方を返す演算子） -->
         <!-- メモ：<button v-on:click="current^=1">toggle</button> -->
       </div>
-      <img class="section-parts-r" src="../assets/img/img_sf_parts1.svg" alt="">
     </div>
   </transition>
 </template>
@@ -38,34 +36,6 @@ export default {
   backdrop-filter: blur(3px);
 }
 
-/* SFっぽい装飾 */
-.section-parts-l {
-  z-index: 60;
-  position: fixed;
-  top: 10%;
-  left: 3%;
-  width: 4em;
-}
-
-.section-parts-r {
-  z-index: 60;
-  position: fixed;
-  bottom: 10%;
-  right: 3%;
-  width: 4em;
-  transform: scale(-1, -1);
-}
-
-@media all and (min-width: 768px) {
-  .section-parts-l {
-    width: 8em;
-  }
-
-  .section-parts-r {
-    width: 8em;
-  }
-}
-
 /* スクロール有コンテンツ */
 .section {
   position: fixed;
@@ -76,9 +46,9 @@ export default {
   width: 90%;
   height: 85%;
   margin: auto;
-  background: rgba(13, 40, 46, .9);
-  border: 2px solid rgba(110, 201, 232, .6);
-  box-shadow: 0 0 8px 3px #6ec9e8 inset;
+  background: rgba(30, 30, 30, .9);
+  border: 2px solid #ddd;
+  box-shadow: 0 0 10px 3px #000 inset;
 }
 
 /* スクロールバーの横幅指定 */
@@ -88,12 +58,12 @@ export default {
 
 /* スクロールバーの背景色 */
 .section::-webkit-scrollbar-track {
-  background: rgba(13, 40, 46, .9);
+  background: rgba(60, 60, 60, .9);
 }
 
 /* スクロールバーの色 */
 .section::-webkit-scrollbar-thumb {
-  background: #6ec9e8;
+  background: #ddd;
 }
 
 /* アニメーション */

@@ -1,0 +1,259 @@
+.thumbnail-box {
+    display: -ms-grid;
+    display: grid;
+    gap: 1em;
+    width: calc(100% - 10px);
+    grid-auto-rows: auto;
+    grid-auto-columns: auto;
+    margin: 0 auto 1.5rem;
+}
+
+@media all and (min-width: 768px) {
+    .thumbnail-box {
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* コンテナのデザイン */
+.article-inner {
+    margin: 0 auto;
+    padding: 2%;
+}
+
+.article-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: start;
+    text-align: left;
+    /*background-color: #333333;*/
+    padding: 3% 10%;
+}
+
+.article-container p {
+    font-size: 12px;
+    margin-bottom: 1.5rem;
+}
+
+@media all and (min-width: 768px) {
+    .article-container p {
+        font-size: 16px;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* 見出しデザイン */
+.headline {
+    position: relative;
+    font-weight: normal;
+    font-size: 1.5em;
+    text-align: center;
+    display: inline-block;
+    margin: 1em 0;
+    color: #6ec9e8;
+    -webkit-filter: drop-shadow(0 0 3px #666);
+    filter: drop-shadow(0 0 3px #666);
+    padding-bottom: .3em;
+    border-bottom: solid 1px #6ec9e8;
+}
+
+.headline::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    display: block;
+    height: 1.3em;
+    width: 1.3em;
+    border: solid 1px #6ec9e8;
+    margin: auto;
+}
+
+.headline::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    right: -20%;
+    display: block;
+    height: .8em;
+    width: .8em;
+    border: solid 1px #6ec9e8;
+    margin: auto;
+}
+
+.headline-lv2 {
+    position: relative;
+    font-size: 1em;
+    text-align: center;
+    display: inline-block;
+    margin: 1em 0;
+    padding-left: 1.5em;
+    color: #6ec9e8;
+    -webkit-filter: drop-shadow(0 0 3px #6ec9e8);
+    filter: drop-shadow(0 0 3px #6ec9e8);
+    padding-bottom: .3em;
+    border-bottom: solid 1px #6ec9e8;
+}
+
+.headline-lv2::before {
+    content: ' - ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: .8em;
+    width: .8em;
+}
+
+/* 画像整形 */
+.img-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1.5em;
+    -webkit-filter: drop-shadow(0 0 3px #6ec9e8);
+    filter: drop-shadow(0 0 3px #6ec9e8);
+}
+
+.img-detail {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* アルバムデザイン（bootstrapをベースにする） */
+.card-container {
+    width: 100%;
+    color: #6ec9e8;
+    margin: 0 auto;
+}
+
+.card-container:hover {
+    color: #6ec9e8;
+    text-decoration: none;
+}
+
+.card-origin {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    background-color: rgba(13, 40, 46, .9);
+    border: solid 1px #6ec9e8;
+    border-radius: .25rem;
+}
+
+.thumbnail {
+    display: block;
+    width: 100%;
+    border-bottom: solid 1px #6ec9e8;
+}
+
+/* テーブルデザイン */
+.career-table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #fff;
+    border-bottom: 1px solid #6ec9e8;
+}
+
+.career-table th {
+    width: 5em;
+}
+
+.career-table th, .career-table td {
+    font-size: 12px;
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #6ec9e8;
+}
+
+.sp-show {
+    display: block;
+}
+
+.pc-show {
+    display: none;
+}
+
+@media all and (min-width: 768px) {
+    .career-table {
+        width: 100%;
+        margin-bottom: 1rem;
+        color: #fff;
+        border-bottom: 1px solid #6ec9e8;
+    }
+
+    .career-table th {
+        width: 5em;
+    }
+
+    .career-table th, .career-table td {
+        font-size: 16px;
+        padding: 0.75rem;
+        vertical-align: top;
+        border-top: 1px solid #6ec9e8;
+    }
+
+    .sp-show {
+        display: none;
+    }
+
+    .pc-show {
+        display: block;
+    }
+}
+
+/* 連絡先アイコン */
+.icon-container {
+    display: -ms-grid;
+    display: grid;
+    gap: 1em;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    grid-auto-rows: auto;
+    -ms-grid-columns: 1fr 1em 1fr 1em 1fr 1em 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 auto 1.5em;
+}
+
+.fa-icon {
+    text-decoration: none;
+    cursor: pointer;
+    color: #6ec9e8;
+    font-size: 2em;
+    -webkit-filter: drop-shadow(0 0 3px rgba(110, 201, 232, .5));
+    filter: drop-shadow(0 0 3px rgba(110, 201, 232, .5));
+}
+
+@media all and (min-width: 768px) {
+    .fa-icon {
+        font-size: 1.5em;
+    }
+}

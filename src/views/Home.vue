@@ -12,7 +12,7 @@
           <carousel ref="carousel" :per-page="1" :navigation-enabled="true"
                     :navigation-prev-label="navigationPrev" :navigation-next-label="navigationNext" @pageChange="test">
             <slide>
-              <div class="slider-inner">
+              <div class="slider-inner" @click="openLink('article1')">
                 <font-awesome-icon class="fa-icon" :icon="['fab','twitter-square']"/>
               </div>
             </slide>
@@ -34,7 +34,7 @@
           <carousel ref="carousel" :per-page="1" :navigation-enabled="true"
                     :navigation-prev-label="navigationPrev" :navigation-next-label="navigationNext" @pageChange="test">
             <slide>
-              <div class="slider-inner">
+              <div class="slider-inner" @click="openLink('article1')">
                 <font-awesome-icon class="fa-icon" :icon="['fab','twitter-square']"/>
               </div>
             </slide>
@@ -103,7 +103,7 @@ export default {
   justify-content: center;
   width: 100%;
   height: 100%;
-  background: #333333;
+  /*background: #333333;*/
 }
 
 /* メニューの位置調整 */
@@ -121,7 +121,7 @@ export default {
     top: 8%;
     width: 100%;
     height: 90%;
-    background: #333333;
+    /*background: #333333;*/
     padding: 5%;
   }
 }
@@ -136,8 +136,7 @@ export default {
   width: 320px;
   height: 700px;
   padding: 1em;
-  background: rgba(13, 40, 46, 0.5);
-  box-shadow: 0 0 8px 3px #666 inset;
+  /*background: #6ec9e8;*/
 }
 
 .pc-hide {
@@ -149,8 +148,8 @@ export default {
     display: flex;
     width: 800px;
     height: 100%;
-    background: rgba(13, 40, 46, 0.5);
-    box-shadow: 0 0 8px 3px #6ec9e8 inset;
+    /*background: #6ec9e8;*/
+    border: 2px solid rgba(255, 255, 255, .1);
   }
 
   .sp-hide {

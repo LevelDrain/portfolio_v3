@@ -48,7 +48,7 @@ export default {
   }
   100% {
     opacity: 1;
-    filter: drop-shadow(0 0 3px #6ec9e8);
+    filter: drop-shadow(0 0 3px #fff);
   }
 }
 
