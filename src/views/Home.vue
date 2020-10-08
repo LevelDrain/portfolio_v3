@@ -12,6 +12,20 @@
           <carousel ref="carousel" :per-page="1" :navigation-enabled="true"
                     :navigation-prev-label="navigationPrev" :navigation-next-label="navigationNext" @pageChange="test">
             <slide>
+              <div class="slider-inner">
+                <div class="slider-txt">
+                  <h3 class="slider-txt-ttl">Direction</h3>
+                  <p>
+                    ソーシャルゲーム<br>
+                    仕様書および企画書の制作<br>
+                    進捗管理などの実務経験2年
+                  </p>
+                </div>
+                <img src="../assets/img/banner_4_pc.png" alt="" class="slider-banner">
+              </div>
+            </slide>
+
+            <slide>
               <div class="slider-inner" @click="openLink('article1')">
                 <div class="slider-txt">
                   <h3 class="slider-txt-ttl">Frontend</h3>
@@ -25,16 +39,6 @@
                   </p>
                 </div>
                 <img src="../assets/img/banner_2_pc.png" alt="" class="slider-banner">
-              </div>
-            </slide>
-
-            <slide>
-              <div class="slider-inner">
-                <div class="slider-txt">
-                  <h3 class="slider-txt-ttl">Direction</h3>
-                  <p>自信作を集めました</p>
-                </div>
-                <img src="../assets/img/banner_4_pc.png" alt="" class="slider-banner">
               </div>
             </slide>
 
