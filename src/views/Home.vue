@@ -13,18 +13,48 @@
                     :navigation-prev-label="navigationPrev" :navigation-next-label="navigationNext" @pageChange="test">
             <slide>
               <div class="slider-inner" @click="openLink('article1')">
-                <font-awesome-icon class="fa-icon" :icon="['fab','twitter-square']"/>
+                <div class="slider-txt">
+                  <h3 class="slider-txt-ttl">Frontend</h3>
+                  <p>
+                    Markup × jQuery<br>
+                    Vue.js × Three.js
+                  </p>
+                  <p>
+                    パートタイムでの<br>
+                    開発経験あり
+                  </p>
+                </div>
+                <img src="../assets/img/banner_2_pc.png" alt="" class="slider-banner">
               </div>
             </slide>
+
             <slide>
               <div class="slider-inner">
-                <div class="slider-txt">frontend</div>
-                <img src="../assets/img/img_work_geostorm.jpg" alt="" class="slider-banner">
+                <div class="slider-txt">
+                  <h3 class="slider-txt-ttl">Direction</h3>
+                  <p>自信作を集めました</p>
+                </div>
+                <img src="../assets/img/banner_4_pc.png" alt="" class="slider-banner">
               </div>
             </slide>
+
             <slide>
               <div class="slider-inner">
-                Slide3
+                <div class="slider-txt">
+                  <h3 class="slider-txt-ttl">ServerSide</h3>
+                  <p>自信作を集めました</p>
+                </div>
+                <img src="../assets/img/banner_3_pc.png" alt="" class="slider-banner">
+              </div>
+            </slide>
+
+            <slide>
+              <div class="slider-inner">
+                <div class="slider-txt">
+                  <h3 class="slider-txt-ttl">Profile</h3>
+                  <p>自信作を集めました</p>
+                </div>
+                <img src="../assets/img/banner_1_pc.png" alt="" class="slider-banner">
               </div>
             </slide>
           </carousel>
@@ -35,13 +65,41 @@
                     :navigation-prev-label="navigationPrev" :navigation-next-label="navigationNext" @pageChange="test">
             <slide>
               <div class="slider-inner" @click="openLink('article1')">
-                <font-awesome-icon class="fa-icon" :icon="['fab','twitter-square']"/>
+                <div class="slider-txt">
+                  <h3 class="slider-txt-ttl">Frontend</h3>
+                  <p>自信作を集めました</p>
+                </div>
+                <img src="../assets/img/banner_2_sp.png" alt="" class="slider-banner">
               </div>
             </slide>
+
             <slide>
               <div class="slider-inner">
-                <div class="slider-txt">frontend</div>
-                <img src="../assets/img/img_work_geostorm.jpg" alt="" class="slider-banner">
+                <div class="slider-txt">
+                  <h3 class="slider-txt-ttl">Direction</h3>
+                  <p>自信作を集めました</p>
+                </div>
+                <img src="../assets/img/banner_4_sp.png" alt="" class="slider-banner">
+              </div>
+            </slide>
+
+            <slide>
+              <div class="slider-inner">
+                <div class="slider-txt">
+                  <h3 class="slider-txt-ttl">ServerSide</h3>
+                  <p>自信作を集めました</p>
+                </div>
+                <img src="../assets/img/banner_3_sp.png" alt="" class="slider-banner">
+              </div>
+            </slide>
+
+            <slide>
+              <div class="slider-inner">
+                <div class="slider-txt">
+                  <h3 class="slider-txt-ttl">Profile</h3>
+                  <p>自信作を集めました</p>
+                </div>
+                <img src="../assets/img/banner_1_sp.png" alt="" class="slider-banner">
               </div>
             </slide>
           </carousel>
@@ -69,11 +127,11 @@ export default {
   computed: {
     navigationNext() {
       const right = require('../assets/img/arrow_right.png')
-      return '<img src="' + right + '" width="30em" style="filter: drop-shadow(0 3px 3px #000);">'
+      return '<img src="' + right + '" width="30em">'
     },
     navigationPrev() {
       const left = require('../assets/img/arrow_left.png')
-      return '<img src="' + left + '" width="30em" style="filter: drop-shadow(0 3px 3px #000);">'
+      return '<img src="' + left + '" width="30em">'
     },
   },
   methods: {
@@ -137,6 +195,7 @@ export default {
   height: 700px;
   padding: 1em;
   /*background: #6ec9e8;*/
+  filter: drop-shadow(0 3px 3px #000);
 }
 
 .pc-hide {
@@ -165,10 +224,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ccc;
+  background: #000;
   box-sizing: border-box;
   /* カルーセル全長 */
-  width: 124px; /* 表示は2倍 */
+  /* width: 248px; */
+  /* これを記事の枚数で割ったものが指定幅 */
+  width: 62px;
   height: 400px;
 }
 
@@ -177,9 +238,10 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #6ec9e8;
+  /*background-color: #6ec9e8;*/
   width: 100%;
   height: 100%;
+  filter: drop-shadow(0 3px 3px #000);
 }
 
 .slider-txt {
@@ -188,11 +250,17 @@ export default {
   bottom: 0;
   left: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 120px;
-  background-color: rgba(244, 64, 38, .7);
+  height: 130px;
+  background-color: rgba(0, 0, 0, .7);
+}
+
+.slider-txt-ttl {
+  font-size: 23px;
+  margin-bottom: .5em;
 }
 
 .slider-banner {
@@ -208,16 +276,18 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #ccc;
+    background: #000;
     box-sizing: border-box;
     /* カルーセル全長 */
-    width: 230px; /* 表示は3倍 */
+    /* width: 690px; */
+    /* これを記事の枚数で割ったものが指定幅 */
+    width: 176px;
     height: 400px;
   }
 
   .slider-inner {
     position: relative;
-    background-color: #62caaa;
+    /*background-color: #62caaa;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -231,11 +301,17 @@ export default {
     top: 0;
     left: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 15em;
+    width: 230px;
     height: 400px;
-    background-color: rgba(244, 64, 38, .7);
+    background-color: rgba(0, 0, 0, .7);
+  }
+
+  .slider-txt-ttl {
+    font-size: 23px;
+    margin-bottom: 1em;
   }
 
   .slider-banner {
