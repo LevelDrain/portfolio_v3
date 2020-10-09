@@ -19,8 +19,15 @@
                   </p>
                 </div>
                 <img src="../assets/img/banner_4_pc.png" alt="" class="slider-banner">
+
+                <!-- 詳細ボタン -->
                 <div class="slider-detail">
-                  ><span v-show="isHover" class="slider-detail-txt">詳しく見る</span>
+                  <div class="slider-detail-header">
+                    >
+                  </div>
+                  <transition name="slide">
+                    <span class="slider-detail-txt" v-if="isHover">詳しく見る</span>
+                  </transition>
                 </div>
               </div>
             </slide>
@@ -40,8 +47,15 @@
                   </p>
                 </div>
                 <img src="../assets/img/banner_2_pc.png" alt="" class="slider-banner">
+
+                <!-- 詳細ボタン -->
                 <div class="slider-detail">
-                  ><span v-show="isHover" class="slider-detail-txt">詳しく見る</span>
+                  <div class="slider-detail-header">
+                    >
+                  </div>
+                  <transition name="slide">
+                    <span class="slider-detail-txt" v-if="isHover">詳しく見る</span>
+                  </transition>
                 </div>
               </div>
             </slide>
@@ -61,8 +75,15 @@
                   </p>
                 </div>
                 <img src="../assets/img/banner_3_pc.png" alt="" class="slider-banner">
+
+                <!-- 詳細ボタン -->
                 <div class="slider-detail">
-                  ><span v-show="isHover" class="slider-detail-txt">詳しく見る</span>
+                  <div class="slider-detail-header">
+                    >
+                  </div>
+                  <transition name="slide">
+                    <span class="slider-detail-txt" v-if="isHover">詳しく見る</span>
+                  </transition>
                 </div>
               </div>
             </slide>
@@ -75,8 +96,15 @@
                   <p>経歴、制作ポリシー</p>
                 </div>
                 <img src="../assets/img/banner_1_pc.png" alt="" class="slider-banner">
+
+                <!-- 詳細ボタン -->
                 <div class="slider-detail">
-                  ><span v-show="isHover" class="slider-detail-txt">詳しく見る</span>
+                  <div class="slider-detail-header">
+                    >
+                  </div>
+                  <transition name="slide">
+                    <span class="slider-detail-txt" v-if="isHover">詳しく見る</span>
+                  </transition>
                 </div>
               </div>
             </slide>
@@ -85,9 +113,11 @@
 
         <div class="main-menu-item sp-hide">
           <carousel ref="carousel" :per-page="1" :navigation-enabled="true" :loop="true"
-                    :navigation-prev-label="navigationPrev" :navigation-next-label="navigationNext" @pageChange="test">
+                    :navigation-prev-label="navigationPrev" :navigation-next-label="navigationNext"
+                    @pageChange="arrowSlide">
             <slide>
-              <div class="slider-inner" @click="openLink('article1')">
+              <div class="slider-inner" v-on:mouseover="mouseOver" v-on:mouseleave="mouseLeave"
+                   @click="openLink('article1')">
                 <div class="slider-txt">
                   <h3 class="slider-txt-ttl">Direction</h3>
                   <p>
@@ -97,11 +127,20 @@
                   </p>
                 </div>
                 <img src="../assets/img/banner_4_sp.png" alt="" class="slider-banner">
+
+                <!-- 詳細ボタン -->
+                <div class="slider-detail">
+                  <div class="slider-detail-header">
+                    >
+                  </div>
+                  <span class="slider-detail-txt">詳しく見る</span>
+                </div>
               </div>
             </slide>
 
             <slide>
-              <div class="slider-inner" @click="openLink('article2')">
+              <div class="slider-inner" v-on:mouseover="mouseOver" v-on:mouseleave="mouseLeave"
+                   @click="openLink('article2')">
                 <div class="slider-txt">
                   <h3 class="slider-txt-ttl">Frontend</h3>
                   <p>
@@ -111,11 +150,20 @@
                   </p>
                 </div>
                 <img src="../assets/img/banner_2_sp.png" alt="" class="slider-banner">
+
+                <!-- 詳細ボタン -->
+                <div class="slider-detail">
+                  <div class="slider-detail-header">
+                    >
+                  </div>
+                  <span class="slider-detail-txt">詳しく見る</span>
+                </div>
               </div>
             </slide>
 
             <slide>
-              <div class="slider-inner" @click="openLink('article3')">
+              <div class="slider-inner" v-on:mouseover="mouseOver" v-on:mouseleave="mouseLeave"
+                   @click="openLink('article3')">
                 <div class="slider-txt">
                   <h3 class="slider-txt-ttl">ServerSide</h3>
                   <p>
@@ -124,16 +172,33 @@
                   </p>
                 </div>
                 <img src="../assets/img/banner_3_sp.png" alt="" class="slider-banner">
+
+                <!-- 詳細ボタン -->
+                <div class="slider-detail">
+                  <div class="slider-detail-header">
+                    >
+                  </div>
+                  <span class="slider-detail-txt">詳しく見る</span>
+                </div>
               </div>
             </slide>
 
             <slide>
-              <div class="slider-inner" @click="openLink('article4')">
+              <div class="slider-inner" v-on:mouseover="mouseOver" v-on:mouseleave="mouseLeave"
+                   @click="openLink('article4')">
                 <div class="slider-txt">
                   <h3 class="slider-txt-ttl">Profile</h3>
                   <p>経歴、制作ポリシー</p>
                 </div>
                 <img src="../assets/img/banner_1_sp.png" alt="" class="slider-banner">
+
+                <!-- 詳細ボタン -->
+                <div class="slider-detail">
+                  <div class="slider-detail-header">
+                    >
+                  </div>
+                  <span class="slider-detail-txt">詳しく見る</span>
+                </div>
               </div>
             </slide>
           </carousel>
@@ -180,9 +245,6 @@ export default {
     mouseLeave() {
       this.isHover = false
     },
-    test() {
-      //console.log('クリック')
-    }
   }
 }
 </script>
@@ -286,17 +348,34 @@ export default {
   cursor: pointer;
 }
 
+/* 詳細ボタン */
 .slider-detail {
   z-index: 50;
   position: absolute;
-  bottom: 0;
+  top: 60%;
+  bottom: unset;
   right: 0;
+  left: unset;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: .5em;
+  font-size: 12px;
+  height: 30px;
   background-color: rgba(0, 0, 0, .7);
+}
+
+.slider-detail-header {
+  display: block;
+  text-align: center;
+  width: 30px;
+}
+
+.slider-detail-txt {
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding-right: .5em;
 }
 
 .slider-txt {
@@ -352,21 +431,54 @@ export default {
     cursor: pointer;
   }
 
+  /* 詳細ボタン */
   .slider-detail {
     z-index: 50;
     position: absolute;
+    top: unset;
     bottom: 0;
+    left: unset;
     right: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: .5em;
+    font-size: 1rem;
+    height: 40px;
     background-color: rgba(0, 0, 0, .7);
   }
 
+  .slider-detail-header {
+    display: block;
+    text-align: center;
+    width: 40px;
+  }
+
   .slider-detail-txt {
-    padding-left: 1em;
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding-right: .5em;
+  }
+
+  .slide-enter-active, .slide-leave-active {
+    width: 100%;
+    animation: fade-in 0.5s;
+  }
+
+  .slide-enter, .slide-leave-to {
+    display: none;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateX(15px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 
   .slider-txt {
