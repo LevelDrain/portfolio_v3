@@ -4,10 +4,6 @@
     <div class="main-menu">
       <div class="main-menu-inner">
         <!-- 本文枠 -->
-
-        <!-- https://www.kabanoki.net/4898/ -->
-        <!-- https://qiita.com/weekendhikach/items/667aa5eee521f6bbd8ef -->
-
         <div class="main-menu-item pc-hide">
           <carousel ref="carousel" :per-page="1" :navigation-enabled="true" :loop="true"
                     :navigation-prev-label="navigationPrev" :navigation-next-label="navigationNext" @pageChange="test">
@@ -30,8 +26,8 @@
                 <div class="slider-txt">
                   <h3 class="slider-txt-ttl">Frontend</h3>
                   <p>
-                    Markup × jQuery<br>
-                    Vue.js × Three.js
+                    HTML / CSS / jQuery<br>
+                    JavaScript / Vue.js / Three.js
                   </p>
                   <p>
                     パートタイムでの<br>
@@ -43,20 +39,27 @@
             </slide>
 
             <slide>
-              <div class="slider-inner">
+              <div class="slider-inner" @click="openLink('article3')">
                 <div class="slider-txt">
                   <h3 class="slider-txt-ttl">ServerSide</h3>
-                  <p>自信作を集めました</p>
+                  <p>
+                    PHP<br>
+                    Laravel + Vue.js
+                  </p>
+                  <p>
+                    パートタイムでの<br>
+                    開発経験あり
+                  </p>
                 </div>
                 <img src="../assets/img/banner_3_pc.png" alt="" class="slider-banner">
               </div>
             </slide>
 
             <slide>
-              <div class="slider-inner">
+              <div class="slider-inner" @click="openLink('article4')">
                 <div class="slider-txt">
                   <h3 class="slider-txt-ttl">Profile</h3>
-                  <p>自信作を集めました</p>
+                  <p>経歴、制作ポリシー</p>
                 </div>
                 <img src="../assets/img/banner_1_pc.png" alt="" class="slider-banner">
               </div>
@@ -65,44 +68,54 @@
         </div>
 
         <div class="main-menu-item sp-hide">
-          <carousel ref="carousel" :per-page="1" :navigation-enabled="true" :loop="true" :autoplay="true"
-                    :autoplayTimeout="10000" :navigation-prev-label="navigationPrev"
-                    :navigation-next-label="navigationNext" @pageChange="test">
+          <carousel ref="carousel" :per-page="1" :navigation-enabled="true" :loop="true"
+                    :navigation-prev-label="navigationPrev" :navigation-next-label="navigationNext" @pageChange="test">
             <slide>
               <div class="slider-inner" @click="openLink('article1')">
                 <div class="slider-txt">
-                  <h3 class="slider-txt-ttl">Frontend</h3>
-                  <p>自信作を集めました</p>
-                </div>
-                <img src="../assets/img/banner_2_sp.png" alt="" class="slider-banner">
-              </div>
-            </slide>
-
-            <slide>
-              <div class="slider-inner">
-                <div class="slider-txt">
                   <h3 class="slider-txt-ttl">Direction</h3>
-                  <p>自信作を集めました</p>
+                  <p>
+                    ソーシャルゲーム<br>
+                    仕様書および企画書の制作<br>
+                    進捗管理などの実務経験2年
+                  </p>
                 </div>
                 <img src="../assets/img/banner_4_sp.png" alt="" class="slider-banner">
               </div>
             </slide>
 
             <slide>
-              <div class="slider-inner">
+              <div class="slider-inner" @click="openLink('article2')">
+                <div class="slider-txt">
+                  <h3 class="slider-txt-ttl">Frontend</h3>
+                  <p>
+                    HTML / CSS / jQuery<br>
+                    JavaScript / Vue.js / Three.js<br>
+                    パートタイムでの開発経験あり
+                  </p>
+                </div>
+                <img src="../assets/img/banner_2_sp.png" alt="" class="slider-banner">
+              </div>
+            </slide>
+
+            <slide>
+              <div class="slider-inner" @click="openLink('article3')">
                 <div class="slider-txt">
                   <h3 class="slider-txt-ttl">ServerSide</h3>
-                  <p>自信作を集めました</p>
+                  <p>
+                    PHP / Laravel + Vue.js<br>
+                    パートタイムでの開発経験あり
+                  </p>
                 </div>
                 <img src="../assets/img/banner_3_sp.png" alt="" class="slider-banner">
               </div>
             </slide>
 
             <slide>
-              <div class="slider-inner">
+              <div class="slider-inner" @click="openLink('article4')">
                 <div class="slider-txt">
                   <h3 class="slider-txt-ttl">Profile</h3>
-                  <p>自信作を集めました</p>
+                  <p>経歴、制作ポリシー</p>
                 </div>
                 <img src="../assets/img/banner_1_sp.png" alt="" class="slider-banner">
               </div>
@@ -260,11 +273,12 @@ export default {
   align-items: center;
   width: 100%;
   height: 130px;
+  font-size: .8rem;
   background-color: rgba(0, 0, 0, .7);
 }
 
 .slider-txt-ttl {
-  font-size: 23px;
+  font-size: 1.3rem;
   margin-bottom: .5em;
 }
 
@@ -311,11 +325,12 @@ export default {
     align-items: center;
     width: 230px;
     height: 400px;
+    font-size: 1rem;
     background-color: rgba(0, 0, 0, .7);
   }
 
   .slider-txt-ttl {
-    font-size: 23px;
+    font-size: 1.6rem;
     margin-bottom: 1em;
   }
 

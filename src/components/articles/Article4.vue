@@ -1,30 +1,134 @@
 <template v-slot:page3>
   <article class="article-inner">
     <div class="article-container">
-      <h3 class="headline">About Ueshima</h3>
-      <p>上島 宏史（Ueshima Hiroshi）<br>
-        現京都コンピュータ学院講師および広報担当。<br>
-        元フロントエンドエンジニア、マジシャンなど。</p>
-      <h4 class="headline-lv2">誰かが受け入れないと何も変わらないからね</h4>
+      <h3 class="headline">Creator Profile</h3>
+      <div class="img-container">
+        <img src="./img/my_icon.png" alt="leveldrain" width="170em">
+      </div>
+
+      <div class="icon-container">
+        <a href="mailto:drain2291@gmail.com">
+          <font-awesome-icon class="fa-icon" :icon="['far','envelope']"/>
+        </a>
+        <a href="https://twitter.com/to_next_level" target="_blank">
+          <font-awesome-icon class="fa-icon" :icon="['fab','twitter-square']"/>
+        </a>
+        <a href="https://www.facebook.com/darkmatter77" target="_blank">
+          <font-awesome-icon class="fa-icon" :icon="['fab','facebook-square']"/>
+        </a>
+        <a href="https://github.com/LevelDrain/portfolio_v3" target="_blank">
+          <font-awesome-icon class="fa-icon" :icon="['fab','github-square']"/>
+        </a>
+      </div>
+
+      <p>上島の弟子。<br>
+        活動名 Level Drain、本名「佐村木 友紀（Yuki Samuraki）」。<br>
+        アダルト系ソーシャルゲームのディレクターからフロントエンドエンジニアになる。<br>
+        佐村木は全国70人程度のレア苗字。
+      </p>
+      <p>ディレクターのバックグラウンドとエンジニアのスキルを持つ。<br>
+        趣味としての目標はCGクリエイター。</p>
+
+      <div class="card-container">
+        <div class="card-origin">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/PbuMpEVKbFg" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="card-container">
+        <div class="card-origin">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/DUcEZpyQgSo" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>
+      </div>
 
       <h3 class="headline">Philosophy</h3>
-      <p>上島氏が残した名言を記載。<br>
-        これを見て元気になってくれる人が私の他に現れれば嬉しい限り。</p>
 
-      <h4 class="headline-lv2">嫌なことが頭から離れない時</h4>
-      <p>前にも話しましたが，嫌なことがあるとそればっかり意識しがちで，何も楽しくなくなりますが，<br>
-        人生振り返っても，プラスよりマイナスのことが多い人を今まで見たことがありません。<br>
-        そう思っている人でも，話をすると，「悪いことを意識して考えすぎるだけ」です。<br>
-        解決するために考える時間は有意義ですが，「嫌だ嫌だ！」と考えるのは落ち込むしかないので，<br>
-        「過去起こったことで落ち込む時間があるなら，5分先のことを考える」ように心がけてもらえれば，<br>
-        モチベーションやメンタルの維持だけでなく，向上につながると思います。</p>
+      <h4 class="headline-lv2">ささやかな気配り</h4>
+      <p>「ありがとう」「ごめんなさい」、それと主体性。</p>
 
-      <h4 class="headline-lv2">自分のことを悪く考えてしまう</h4>
-      <p>自分の事を悪く考えるのはカンタンですが，何もメリットがありませんから，今やるべきことに集中することに意識を向けましょう。<br>
-        人間は文句も言いますし，感情的にもなるものです。それは「最低な人間」でもなんでもないです。<br>
-        前に進むべき時に前に進めるかどうかの判断力と行動力が大切です。自分にもっと自信をもってくださいね。<br>
-        自分を悪く言って終わるだけの考えは意味がありませんし，他の誰かに認めてもらうこと以外解決しません。<br>
-        そういった考えに時間を使わない「努力」が必要なのかもしれませんね。</p>
+      <h4 class="headline-lv2">細かい作業を疎かにしない</h4>
+      <p>仕上がりは依頼されたクオリティの +α を目指す。</p>
+
+      <h4 class="headline-lv2">楽しもうという姿勢</h4>
+      <p>何よりも仕事に誇りを持って取り組めるかどうか。</p>
+
+      <h3 class="headline">Career</h3>
+
+      <!-- TODO:Vue.jsの良さが出てないので、mixinか何かでテンプレ作ってレスポンシブ対応 -->
+      <div class="row justify-content-center">
+        <div class="col-11">
+          <table class="career-table pc-show">
+            <tr>
+              <th>2009年</th>
+              <td>脳科学者になりたいと思い、長浜バイオ大学に入学。<br>
+                在学中に統計学や生命情報科学、3DCGに興味を持つ。実験に挫折。
+              </td>
+            </tr>
+            <tr>
+              <th>2013年</th>
+              <td>奈良先端科学技術大学院大学で生命情報科学の研究室に入る。<br>
+                実験データのデータ解析を行う。
+              </td>
+            </tr>
+            <tr>
+              <th>2015年</th>
+              <td>アミューズメント系企業に入社。データ分析の経験から、ソーシャルゲームのパラメータ調整を行う。<br>
+                GUIの設計やWebページ分析業務、ディレクション等を行っていた。
+              </td>
+            </tr>
+            <tr>
+              <th>2017年</th>
+              <td>制作の方に進むべく全財産を投資し、京都コンピュータ学院に入学。</td>
+            </tr>
+            <tr>
+              <th>2020年</th>
+              <td>ベンチャーSIer のWeb開発者としてアシスタントからスタート。</td>
+            </tr>
+          </table>
+
+          <!-- スマホ用 -->
+          <table class="career-table sp-show">
+            <tr>
+              <th>2009年</th>
+            </tr>
+            <tr>
+              <td>脳科学者になりたいと思い、長浜バイオ大学に入学。<br>
+                在学中に統計学や生命情報科学、3DCGに興味を持つ。実験に挫折。
+              </td>
+            <tr>
+              <th>2013年</th>
+            </tr>
+            <tr>
+              <td>奈良先端科学技術大学院大学で生命情報科学の研究室に入る。<br>
+                実験データのデータ解析を行う。
+              </td>
+            </tr>
+            <tr>
+              <th>2015年</th>
+            </tr>
+            <tr>
+              <td>アミューズメント系企業に入社。データ分析の経験から、ソーシャルゲームのパラメータ調整を行う。<br>
+                GUIの設計やWebページ分析業務、ディレクション等を行っていた。
+              </td>
+            </tr>
+            <tr>
+              <th>2017年</th>
+            </tr>
+            <tr>
+              <td>制作の方に進むべく全財産を投資し、京都コンピュータ学院に入学。</td>
+            </tr>
+            <tr>
+              <th>2020年</th>
+            </tr>
+            <tr>
+              <td>ベンチャーSIer のWeb開発者としてアシスタントからスタート。</td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </div>
   </article>
 </template>
