@@ -9,10 +9,10 @@
         <!-- https://qiita.com/weekendhikach/items/667aa5eee521f6bbd8ef -->
 
         <div class="main-menu-item pc-hide">
-          <carousel ref="carousel" :per-page="1" :navigation-enabled="true"
+          <carousel ref="carousel" :per-page="1" :navigation-enabled="true" :loop="true"
                     :navigation-prev-label="navigationPrev" :navigation-next-label="navigationNext" @pageChange="test">
             <slide>
-              <div class="slider-inner">
+              <div class="slider-inner" @click="openLink('article1')">
                 <div class="slider-txt">
                   <h3 class="slider-txt-ttl">Direction</h3>
                   <p>
@@ -26,7 +26,7 @@
             </slide>
 
             <slide>
-              <div class="slider-inner" @click="openLink('article1')">
+              <div class="slider-inner" @click="openLink('article2')">
                 <div class="slider-txt">
                   <h3 class="slider-txt-ttl">Frontend</h3>
                   <p>
@@ -65,8 +65,9 @@
         </div>
 
         <div class="main-menu-item sp-hide">
-          <carousel ref="carousel" :per-page="1" :navigation-enabled="true"
-                    :navigation-prev-label="navigationPrev" :navigation-next-label="navigationNext" @pageChange="test">
+          <carousel ref="carousel" :per-page="1" :navigation-enabled="true" :loop="true" :autoplay="true"
+                    :autoplayTimeout="10000" :navigation-prev-label="navigationPrev"
+                    :navigation-next-label="navigationNext" @pageChange="test">
             <slide>
               <div class="slider-inner" @click="openLink('article1')">
                 <div class="slider-txt">
