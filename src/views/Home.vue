@@ -8,7 +8,8 @@
           <carousel ref="carousel" :per-page="1" :navigation-enabled="true" :loop="true"
                     :navigation-prev-label="navigationPrev" :navigation-next-label="navigationNext" @pageChange="test">
             <slide>
-              <div class="slider-inner" @click="openLink('article1')">
+              <div class="slider-inner" v-on:mouseover="mouseOver" v-on:mouseleave="mouseLeave"
+                   @click="openLink('article1')">
                 <div class="slider-txt">
                   <h3 class="slider-txt-ttl">Direction</h3>
                   <p>
@@ -18,11 +19,15 @@
                   </p>
                 </div>
                 <img src="../assets/img/banner_4_pc.png" alt="" class="slider-banner">
+                <div class="slider-detail">
+                  ><span v-show="isHover" class="slider-detail-txt">詳しく見る</span>
+                </div>
               </div>
             </slide>
 
             <slide>
-              <div class="slider-inner" @click="openLink('article2')">
+              <div class="slider-inner" v-on:mouseover="mouseOver" v-on:mouseleave="mouseLeave"
+                   @click="openLink('article2')">
                 <div class="slider-txt">
                   <h3 class="slider-txt-ttl">Frontend</h3>
                   <p>
@@ -35,11 +40,15 @@
                   </p>
                 </div>
                 <img src="../assets/img/banner_2_pc.png" alt="" class="slider-banner">
+                <div class="slider-detail">
+                  ><span v-show="isHover" class="slider-detail-txt">詳しく見る</span>
+                </div>
               </div>
             </slide>
 
             <slide>
-              <div class="slider-inner" @click="openLink('article3')">
+              <div class="slider-inner" v-on:mouseover="mouseOver" v-on:mouseleave="mouseLeave"
+                   @click="openLink('article3')">
                 <div class="slider-txt">
                   <h3 class="slider-txt-ttl">ServerSide</h3>
                   <p>
@@ -52,16 +61,23 @@
                   </p>
                 </div>
                 <img src="../assets/img/banner_3_pc.png" alt="" class="slider-banner">
+                <div class="slider-detail">
+                  ><span v-show="isHover" class="slider-detail-txt">詳しく見る</span>
+                </div>
               </div>
             </slide>
 
             <slide>
-              <div class="slider-inner" @click="openLink('article4')">
+              <div class="slider-inner" v-on:mouseover="mouseOver" v-on:mouseleave="mouseLeave"
+                   @click="openLink('article4')">
                 <div class="slider-txt">
                   <h3 class="slider-txt-ttl">Profile</h3>
                   <p>経歴、制作ポリシー</p>
                 </div>
                 <img src="../assets/img/banner_1_pc.png" alt="" class="slider-banner">
+                <div class="slider-detail">
+                  ><span v-show="isHover" class="slider-detail-txt">詳しく見る</span>
+                </div>
               </div>
             </slide>
           </carousel>
@@ -140,6 +156,7 @@ export default {
   data() {
     return {
       showSection: this.$store.state.showSection,
+      isHover: false,
     };
   },
   computed: {
@@ -156,6 +173,12 @@ export default {
     openLink(id) {
       //遷移（遷移と同時にモーダルを開く仕様 → router参照）
       this.$router.push("/" + id);
+    },
+    mouseOver() {
+      this.isHover = true
+    },
+    mouseLeave() {
+      this.isHover = false
     },
     test() {
       console.log('クリック')
@@ -260,6 +283,20 @@ export default {
   width: 100%;
   height: 100%;
   filter: drop-shadow(0 3px 3px #000);
+  cursor: pointer;
+}
+
+.slider-detail {
+  z-index: 50;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: .5em;
+  background-color: rgba(0, 0, 0, .7);
 }
 
 .slider-txt {
@@ -312,6 +349,24 @@ export default {
     align-items: center;
     width: 100%;
     height: 100%;
+    cursor: pointer;
+  }
+
+  .slider-detail {
+    z-index: 50;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: .5em;
+    background-color: rgba(0, 0, 0, .7);
+  }
+
+  .slider-detail-txt {
+    padding-left: 1em;
   }
 
   .slider-txt {
