@@ -6,7 +6,7 @@
         <!-- 本文枠 -->
         <div class="main-menu-item pc-hide">
           <carousel ref="carousel" :per-page="1" :navigation-enabled="true" :loop="true"
-                    :navigation-prev-label="navigationPrev" :navigation-next-label="navigationNext" @pageChange="test">
+                    :navigation-prev-label="navigationPrev" :navigation-next-label="navigationNext">
             <slide>
               <div class="slider-inner" v-on:mouseover="mouseOver" v-on:mouseleave="mouseLeave"
                    @click="openLink('article1')">
@@ -113,8 +113,7 @@
 
         <div class="main-menu-item sp-hide">
           <carousel ref="carousel" :per-page="1" :navigation-enabled="true" :loop="true"
-                    :navigation-prev-label="navigationPrev" :navigation-next-label="navigationNext"
-                    @pageChange="arrowSlide">
+                    :navigation-prev-label="navigationPrev" :navigation-next-label="navigationNext">
             <slide>
               <div class="slider-inner" v-on:mouseover="mouseOver" v-on:mouseleave="mouseLeave"
                    @click="openLink('article1')">

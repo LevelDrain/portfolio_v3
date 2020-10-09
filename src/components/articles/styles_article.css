@@ -28,7 +28,7 @@
     margin-bottom: 1.5rem;
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .article-container p {
         font-size: 16px;
         margin-bottom: 1.5rem;
@@ -102,9 +102,17 @@
 
 /* アルバムデザイン（bootstrapをベースにする） */
 .card-container {
-    width: 70%;
+    width: 100%;
     color: #ddd;
     margin: 1.5em auto 0;
+}
+
+@media all and (min-width: 767px) {
+    .card-container {
+        width: 70%;
+        color: #ddd;
+        margin: 1.5em auto 0;
+    }
 }
 
 .card-container:hover {
@@ -161,7 +169,7 @@
     display: none;
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .career-table {
         width: 100%;
         margin-bottom: 1rem;
@@ -210,7 +218,7 @@
     font-size: 2em;
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 767px) {
     .fa-icon {
         font-size: 1.5em;
     }
