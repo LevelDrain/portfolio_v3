@@ -181,7 +181,7 @@ export default {
       this.isHover = false
     },
     test() {
-      console.log('クリック')
+      //console.log('クリック')
     }
   }
 }
